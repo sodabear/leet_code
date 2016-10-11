@@ -1,0 +1,49 @@
+1 Nim Game
+
+This reminds me the fibonacci series.
+the last step has to less than 4 stone
+
+if there are 5 stones remind, I can take 
+1 stone away.so it reminds 4 stone for him 
+
+if there are 6 stones, i can take 2 
+
+if there are 7 stones, i can take 3 
+if there are 8 stones, i will lose since
+if i take 1, he can take 3. 
+
+if there are 9 stones, i can take 
+
+so the trick is never be start at multiple of 4 
+
+
+2 Add Digits  
+write a helper function which takes in a num 
+and then return 
+first we need to mod that number by 10 
+to get last digit 
+but we dont know how many times we need to mod it by 10 
+
+
+3 Moving Zeros
+ I would like to move zeros to the back of arry 
+ whenever i met one. 
+ so i plan to 
+
+
+4 Game of Life 
+
+
+
+5 Palindrome Linked List
+  what is singly linked list in python? 
+  how to code singly linked list in python? 
+
+
+6 Word Pattern
+  aabb bbcc eedd 
+
+  There are two approach to solve this problem.
+  First, We can  
+
+  
