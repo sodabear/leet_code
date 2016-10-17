@@ -1,0 +1,13 @@
+2|1000
+3|2000
+5|7000
+10|8000
+2|bob|BUY|1000
+1|xizi|BUY|1000
+2|alice|BUY|500
+2|gengpang|BUY|2000
+3|xizi|BUY|2000
+3|yang|SELL|1000
+4|xizi|BUY|1000
+5|xizi|BUY|1000
+6|xizi|BUY|1000
