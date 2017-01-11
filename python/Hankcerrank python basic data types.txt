@@ -1,0 +1,151 @@
+Hankcerrank python basic data types
+Q1
+Here is how I broke this down:
+We need to read the first line of input to get it out of the way (it can be used to write a parser for the next line, but it isn't useful)
+n = raw_input()
+Read in the second line -- this is just a single string ex. '1 2 3 4'
+input_line = raw_input()
+Split the string by whitespace into a list
+input_list = input_line.split()
+Note: This is a list of strings ex. ['1', '2', '3', '4'] But we want a list of integers ex. [1, 2, 3, 4]
+We need to convert the list elements from strings to ints
+[Simple] Option 1 (since we know the number of elements, n):
+    for i in xrange(n):
+        input_list[i] = int(input_list[i])
+[Simple] Option 2 (if we are ignoring the first input line for some reason):
+    for i in xrange(len(input_list)):
+        input_list[i] = int(input_list[i])
+[More Advanced] Option 3:
+    input_list = map(int, input_list)
+[More Advanced] Option 4 (List composition):
+    input_list = [int(x) for x in input_list]
+Now input_list looks like this: [1, 2, 3, 4]
+We need to convert our list of ints to a tuple of ints (as a list is not hashable, but a tuple is)
+t = tuple(input_list)
+print the result
+print hash(t)
+Other Optimizations (Not necessary for credit here):
+If the first input line == '0' then bail, there isn't anything interesting to parse
+Call strip() on the input to remove trailing and leading whitespace.
+raw_input().strip()
+These commands can obviously be combined
+
+Q2
+
+n2 = list(map(int,n2.split()))
+vs
+n2 = list(map(int(),n2.split()))
+
+Q3 nested list 
+
+marksheet = []
+for _ in range(0,int(input())):
+    marksheet.append([input(), float(input())])
+
+second_highest = sorted(list(set([marks for name, marks in marksheet])))[1]
+print('\n'.join([a for a,b in sorted(marksheet) if b == second_highest]))
+
+
+Q4 
+n = int(raw_input())
+mydict = {}
+for line in range(n):
+    info = raw_input().split(" ")
+    score = map(float, info[1:])
+    mydict[info[0]] = sum(score) / float(len(score))
+
+print "%.2f" % round(mydict[raw_input()],2) 
+
+
+
+Q4 
+n = input()
+dic = {}
+
+for x in range(int(n)):
+    line = input().split()
+    score = map(float,line[1:])?
+    # why do i get map object
+    print(score)
+    <map object at 0x7ff37b541f60>
+	<map object at 0x7ff37b4a00b8>
+	<map object at 0x7ff37b541ef0>
+
+Q5
+为什么这么设计？
+The functionality of map and filter was intentionally changed to return iterators, and reduce was removed from being a built-in and placed in functools.reduce.
+
+So, for filter and map, you can wrap them with list() to see the results like you did before.
+
+
+String ?????
+print ''.join([i.lower() if i.isupper() else i.upper() for i in raw_input()])
+
+Q6
+how to add dictionary to mac? 
+what to more advance dictionary to mac
+
+Q7 
+how to change mac short cut 
+
+
+Q8
+[True if c.isalnum() else False for c in "#####;"]
+[False, False, False, False, False, False]
+如何reduce成一个结果？
+
+Q9 string validators
+n = input()
+for cmd in ["isalnum()","isalpha()","isdigit()","islower()","isupper()"]:
+    if eval('n' + '.' + cmd):
+        print(True)
+    else:
+        print(False)
+
+#1
+str = raw_input()
+print any(c.isalnum()  for c in str)
+print any(c.isalpha() for c in str)
+print any(c.isdigit() for c in str)
+print any(c.islower() for c in str)
+print any(c.isupper() for c in str)
+
+#2
+
+digit=False
+alpha=False
+
+for c in str:
+    if c.isdigit():
+        digit=True
+    if c.isalpha():
+        alpha=True
+    if alpha and digit:
+        break
+
+print digit or alpha
+print alpha
+print digit
+print alpha and ( str.islower() or not str.isupper() )
+print alpha and ( str.isupper() or not str.islower() )
+
+
+Q10
+wrap 到底是干嘛的？
+
+Q11 format string
+@todo read following 
+https://pyformat.info/
+n = int(input())
+k = len("{0:b}".format(n))
+for x in range(1,n+1):
+    for base in "doXb":
+        print('{0:{width}{type}}'.format(x,type=base, width=k), end = " ")
+    print()    
+           
+n = int(raw_input())
+width = len("{0:b}".format(n))
+for i in xrange(1,n+1):
+  print "{0:{width}d} {0:{width}o} {0:{width}X} {0:{width}b}".format(i, width=width)  
+
+

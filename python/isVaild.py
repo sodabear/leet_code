@@ -1,0 +1,2 @@
+
+def isValid(self,s):
