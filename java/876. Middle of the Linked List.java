@@ -8,17 +8,14 @@
  */
 class Solution {
     public ListNode middleNode(ListNode head) {
-        ListNode fast = new ListNode( 0 );
-        ListNode slow = new ListNode( 0 );
-        
-        fast = head;
-        slow = head;
-        
-        while(fast.next != null && fast != null) { //停止条件
+        ListNode fast = head;
+        ListNode slow = head;
+
+        while(fast != null && fast.next != null) {
             fast = fast.next;
             fast = fast.next;
             slow = slow.next;
         }
-        return slow.val; 
+        return slow; 
     }
 }
